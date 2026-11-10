@@ -1,0 +1,203 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Plataforma de hospitalidad</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: seis secciones, de izquierda a derecha: problema, solución, entornos, requisitos, fases, lo que necesitamos. */
+:root {
+  --bg: #f7f6ff; --surface: #ffffff; --ink: #1b1537; --muted: #55516e;
+  --line: #dcd8f2; --accent: #5d4bf6; --accent-soft: #eeebff; --fill: #2a1f6b;
+  --on-dark: #ffffff; --warm: #b93a0b; --warm-soft: #fdede4; --accent-fill: #5d4bf6; --ink-accent: #2a1f6b;
+  --head: "Space Grotesk", Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --body: Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 72px; }
+.wrap { max-width: 1040px; margin: 0 auto; }
+h1, h2, h3, h4 { font-family: var(--head); text-wrap: balance; }
+.eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: .09em; font-weight: 700; color: var(--accent); margin: 0 0 12px; }
+h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.05; letter-spacing: -.03em; margin: 0 0 16px; font-weight: 700; }
+.lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 640px; margin: 0; }
+header.hero { padding-block: 56px 8px; }
+section { margin-top: 76px; }
+h2 { font-size: clamp(26px, 3.6vw, 36px); line-height: 1.12; letter-spacing: -.02em; margin: 0 0 8px; }
+.sub { color: var(--muted); margin: 0 0 28px; max-width: 620px; }
+.k { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--accent-fill); color: var(--on-dark); font-size: 18px; font-weight: 700; margin-right: 12px; vertical-align: middle; }
+h4 { margin: 0; }
+
+/* 1 y 2 */
+.necks { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.nk { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; border-top: 4px solid var(--warm); }
+.nb { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--warm-soft); color: var(--warm); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+.nk h4 { font-size: 18px; margin-bottom: 6px; }
+.nk p { margin: 0; color: var(--muted); font-size: 15px; }
+.sols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.sl { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; border-top: 4px solid var(--accent); }
+.sn { display: inline-block; font-size: 12px; font-weight: 700; color: var(--ink-accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; margin-bottom: 10px; }
+.sl h4 { font-size: 18px; margin-bottom: 6px; }
+.sl p { margin: 0; color: var(--muted); font-size: 15px; }
+.core { background: var(--fill); color: var(--on-dark); border-radius: 20px; padding: 26px 28px; margin-bottom: 14px; }
+.core h3 { margin: 0 0 6px; font-size: clamp(22px, 3vw, 28px); }
+.core p { margin: 0; color: #d9d4ff; max-width: 680px; }
+
+/* 3 Entornos */
+.hub { display: grid; grid-template-columns: 1fr 1.05fr 1fr; gap: 36px; align-items: center; }
+.col3 { display: grid; gap: 14px; }
+.en { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.en h4 { font-size: 17px; margin-bottom: 2px; }
+.en p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.4; }
+.hub .l .en::after, .hub .r .en::before { content: ""; position: absolute; top: 50%; width: 36px; border-top: 2px solid var(--accent); }
+.hub .l .en::after { left: 100%; } .hub .r .en::before { right: 100%; }
+.hc { background: var(--fill); color: var(--on-dark); border-radius: 20px; padding: 28px 22px; text-align: center; min-height: 220px; display: grid; align-content: center; gap: 8px; }
+.hc small { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; color: #cfc9ff; font-weight: 700; }
+.hc h3 { margin: 0; font-size: 24px; }
+.hc p { margin: 0; font-size: 14.5px; color: #d9d4ff; }
+.path { margin-top: 28px; }
+.path h3 { font-size: 17px; margin: 0 0 12px; }
+.chain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 0; align-items: stretch; }
+.chain li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-weight: 600; font-size: 14.5px; position: relative; margin-right: 26px; }
+.chain li:not(:last-child)::after { content: ""; position: absolute; right: -19px; top: 50%; width: 10px; height: 10px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); transform: translateY(-50%) rotate(45deg); }
+.chain li small { display: block; font-weight: 500; color: var(--muted); font-size: 12px; }
+.chain li.s { background: var(--accent-soft); }
+
+/* 4 Requisitos */
+.rqs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 14px; }
+.rq { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 12px; align-content: start; }
+.rq h4 { font-size: 19px; }
+.rq ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.rq li { display: grid; gap: 1px; padding-left: 16px; position: relative; font-size: 14.5px; }
+.rq li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.rq li b { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.rn { margin: 0; font-size: 13.5px; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--line); }
+
+/* 5 Fases */
+.tl { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 3px; }
+.tick { font-size: 11px; color: var(--muted); text-align: center; font-variant-numeric: tabular-nums; }
+.bar { border-radius: 10px; padding: 12px 6px; font-weight: 700; font-size: 14px; text-align: center; min-width: 0; font-family: var(--head); }
+.b1 { grid-column: 1 / span 2; background: var(--accent-soft); color: var(--ink-accent); border: 1px solid var(--line); }
+.b2 { grid-column: 3 / span 8; background: var(--fill); color: var(--on-dark); }
+.b3 { grid-column: 11 / span 3; background: var(--accent-fill); color: var(--on-dark); }
+.mil { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 3px; margin-top: 10px; }
+.mil span { font-size: 11.5px; line-height: 1.25; color: var(--ink-accent); font-weight: 600; text-align: center; border-top: 2px solid var(--accent); padding-top: 6px; }
+.ph3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.pc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; display: grid; gap: 8px; align-content: start; }
+.pc small { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.pc h4 { font-size: 21px; }
+.pc p { margin: 0; color: var(--muted); font-size: 15px; }
+.pc .dc { margin-top: 6px; background: var(--warm-soft); border-radius: 10px; padding: 10px 12px; font-size: 14px; }
+.pc .dc b { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--warm); margin-bottom: 2px; }
+.note { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+
+/* 6 Necesitamos */
+.needs { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.nr, .nh { display: grid; grid-template-columns: 1.4fr 1.5fr 175px; gap: 6px 22px; padding: 16px 22px; align-items: start; }
+.nr { border-top: 1px solid var(--line); }
+.nh { background: var(--accent-soft); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-accent); padding-block: 11px; }
+.nq b { font-family: var(--head); font-size: 16px; }
+.np { font-size: 15px; color: var(--ink); }
+.np small { display: none; }
+.nw { font-weight: 700; font-size: 14px; color: var(--accent); }
+
+@media (max-width: 800px) {
+  header.hero { padding-block: 36px 4px; } section { margin-top: 56px; }
+  .hub { grid-template-columns: 1fr; gap: 14px; }
+  .hub .hc { order: -1; min-height: 0; }
+  .hub .en::after, .hub .en::before { display: none; }
+  .ph3 { grid-template-columns: 1fr; }
+  .mil { display: none; }
+  .nh { display: none; }
+  .nr { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
+  .np small { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); font-weight: 600; }
+  .bar { font-size: 12.5px; padding: 12px 2px; }
+  .chain { flex-direction: column; gap: 22px; }
+  .chain li { margin-right: 0; }
+  .chain li:not(:last-child)::after { right: auto; left: 22px; top: auto; bottom: -17px; transform: rotate(135deg); }
+  .core { padding: 22px 20px; }
+}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <p class="eyebrow">Plataforma de hospitalidad | Plan de ejecución</p>
+  <h1>Plataforma de hospitalidad para Mérida: plan de ejecución a 13 semanas</h1>
+  <p class="lead">Propuesta para administrar propiedades, recibir reservas y atender huéspedes desde una sola plataforma, con piloto operando en 13 semanas. Incluye alcance, fases, requisitos y lo que necesitamos de ustedes.</p>
+</header>
+
+<section aria-labelledby="t1">
+  <h2 id="t1"><span class="k">1</span>Problemas que vamos a resolver</h2>
+  <p class="sub">Esto entendimos de la reunión del 4 de noviembre y de sus respuestas. Lo confirmamos con ustedes antes de cerrar el alcance.</p>
+  <div class="necks"><div class="nk"><span class="nb">1</span><h4>Inmuebles sin ocupación que generan gastos</h4><p>Muchos inmuebles en Mérida pertenecen a personas que no viven ahí. Permanecen sin ocupación mientras siguen generando gastos.</p></div><div class="nk"><span class="nb">2</span><h4>Comercialización sin estructura documentada</h4><p>La renta de propiedades hoy no cuenta con un proceso oficial documentado ni con una presentación estandarizada.</p></div><div class="nk"><span class="nb">3</span><h4>Alta y validación en distintos canales</h4><p>Documentos, contratos y revisión legal se gestionan por separado. Falta un expediente único por propiedad.</p></div><div class="nk"><span class="nb">4</span><h4>Operación y gastos sin vista central</h4><p>Limpieza, mantenimiento, gastos y reportes al dueño se gestionan por separado. Falta una vista única para darles seguimiento.</p></div><div class="nk"><span class="nb">5</span><h4>El huésped usa varias apps</h4><p>Hospedaje, restaurantes, boletos y actividades se reservan en plataformas distintas.</p></div></div>
+</section>
+
+<section aria-labelledby="t2">
+  <h2 id="t2"><span class="k">2</span>Qué vamos a construir</h2>
+  <p class="sub">Una plataforma donde cada propiedad tiene un expediente y el resto de las funciones se conectan a él.</p>
+  <div class="core"><h3>Una propiedad, un registro, un solo lugar</h3><p>El dueño, el equipo, el personal operativo y el huésped trabajan sobre la misma información. Cada rol ve solo lo que le corresponde.</p></div>
+  <div class="sols"><div class="sl"><span class="sn">Resuelve el 1</span><h4>Publicar con validación previa</h4><p>Los dueños publican sus inmuebles en la plataforma. Solo se publica lo firmado y validado.</p></div><div class="sl"><span class="sn">Resuelve el 2</span><h4>Ficha estandarizada por propiedad</h4><p>Cada propiedad tiene ficha, fotos, reglas y precios, y queda lista para reservarse.</p></div><div class="sl"><span class="sn">Resuelve el 3</span><h4>Un solo expediente por propiedad</h4><p>Documentos, contrato, reservas, gastos, incidencias y reportes en el mismo lugar.</p></div><div class="sl"><span class="sn">Resuelve el 4</span><h4>Seguimiento y reporte al dueño</h4><p>Cada gasto queda con comprobante y aprobación. El dueño consulta su calendario y recibe un reporte mensual.</p></div><div class="sl"><span class="sn">Resuelve el 5</span><h4>Una sola app para el huésped</h4><p>Reserva en 2 o 3 pasos y concierge con restaurantes, shows y actividades validadas. Disponible en inglés y español.</p></div></div>
+</section>
+
+<section aria-labelledby="t3">
+  <h2 id="t3"><span class="k">3</span>Los entornos y cómo se conectan</h2>
+  <p class="sub">Cada entorno es un espacio de trabajo. Todos leen y escriben sobre la ficha de la propiedad.</p>
+  <div class="hub">
+    <div class="col3 l">
+      <div class="en"><h4>Firma y alta</h4><p>Contrato, documentos y validación del dueño.</p></div>
+      <div class="en"><h4>Operación</h4><p>Incidencias, mantenimiento y gastos.</p></div>
+      <div class="en"><h4>Panel del dueño</h4><p>Su calendario, ingresos y reporte mensual.</p></div>
+    </div>
+    <div class="hc"><small>Todo parte de aquí</small><h3>Ficha de propiedad</h3><p>Documentos, contrato, reservas, gastos, incidencias y reportes.</p></div>
+    <div class="col3 r">
+      <div class="en"><h4>Motor de reservas</h4><p>Búsqueda, disponibilidad y reserva en 2 o 3 pasos.</p></div>
+      <div class="en"><h4>Pagos</h4><p>Cobro con pasarela. La reserva se confirma con el pago validado.</p></div>
+      <div class="en"><h4>Concierge</h4><p>Restaurantes, shows y actividades para el huésped.</p></div>
+      <div class="en"><h4>Backoffice y API</h4><p>Usuarios, permisos, reportes y conexión con otros sistemas.</p></div>
+    </div>
+  </div>
+  <div class="path">
+    <h3>Recorrido completo de una propiedad</h3>
+    <ol class="chain">
+      <li class="s">Alta y firma<small>Firma y alta</small></li>
+      <li>Se publica<small>Motor de reservas</small></li>
+      <li>Reserva y pago<small>Motor y pagos</small></li>
+      <li>Estancia<small>Concierge</small></li>
+      <li>Limpieza y mantenimiento<small>Operación</small></li>
+      <li class="s">Reporte al dueño<small>Panel del dueño</small></li>
+    </ol>
+  </div>
+</section>
+
+<section aria-labelledby="t4">
+  <h2 id="t4"><span class="k">4</span>Lo que se requiere en cada entorno</h2>
+  <p class="sub">Esto debe existir para que cada entorno funcione.</p>
+  <div class="rqs"><div class="rq"><h4>Dar de alta una propiedad</h4><ul><li><b>Del dueño</b><span>Identificación oficial, RFC, comprobante de domicilio, datos bancarios. Acta y poder si es empresa.</span></li><li><b>De la propiedad</b><span>Escritura o contrato que permita rentar, predial y servicios al corriente, reglas del condominio y permiso de hospedaje que aplique.</span></li><li><b>Para publicar</b><span>Fotos, servicios, reglas, precio, noches mínimas, cancelación y acceso probado.</span></li><li><b>Validación</b><span>Ninguna propiedad se da de alta ni se publica sin pasar la validación de documentos. Si falta algo, queda en validación hasta que el dueño lo complete.</span></li><li><b>Propiedades iniciales</b><span>Ustedes definen las 10 a 15 propiedades con las que se arranca y reúnen la documentación de cada una.</span></li></ul><p class="rn">Esta lista sale de nuestra búsqueda de requisitos. Debe validarse contra su proceso de validación actual, y la lista final la confirma su asesor legal.</p></div><div class="rq"><h4>Hacer una reservación</h4><ul><li><b>Del huésped</b><span>Fechas, número de personas y sus datos.</span></li><li><b>Antes de pagar</b><span>Aceptar las políticas y reglas de la propiedad.</span></li><li><b>Al terminar</b><span>Confirmación, comprobante e instrucciones de llegada.</span></li><li><b>Idioma y moneda</b><span>Inglés y español desde el inicio. La moneda se elige según la preferencia del huésped o del propietario.</span></li></ul><p class="rn">Reservar, modificar o cancelar en 2 o 3 pasos.</p></div><div class="rq"><h4>Aceptar pagos</h4><ul><li><b>De la empresa</b><span>Una pasarela de pago elegida y su cuenta a nombre de la empresa.</span></li><li><b>Pasarela</b><span>Es el único medio de cobro. Recomendamos la pasarela según su tipo de negocio y sus necesidades de pago internacional.</span></li><li><b>De la reserva</b><span>Se confirma solo cuando el pago está validado.</span></li><li><b>Del dueño</b><span>Pago mensual con su estado de cuenta.</span></li></ul><p class="rn">Los métodos de pago y las comisiones dependen de la pasarela. Les entregamos la recomendación en la semana 2.</p></div><div class="rq"><h4>Operación y mantenimiento</h4><ul><li><b>Incidencias</b><span>Registro, responsable asignado y seguimiento.</span></li><li><b>Gastos</b><span>Comprobante y aprobación del dueño cuando pasan su monto autorizado.</span></li><li><b>Limpieza</b><span>Se arma con el proceso que ustedes ya manejan.</span></li></ul><p class="rn">El monto autorizado se fija en el contrato de cada dueño.</p></div><div class="rq"><h4>Panel del dueño</h4><ul><li><b>Acceso</b><span>Usuario propio. Solo ve sus propiedades.</span></li><li><b>Información</b><span>Calendario, ingresos y gastos.</span></li><li><b>Reporte</b><span>Correo mensual con el resumen de su propiedad.</span></li><li><b>Idioma y moneda</b><span>Elige inglés o español y la moneda en que ve sus ingresos y gastos.</span></li></ul></div><div class="rq"><h4>Concierge</h4><ul><li><b>Catálogo</b><span>Restaurantes, shows y actividades validadas.</span></li><li><b>Solicitud</b><span>El huésped pide y el equipo confirma con el proveedor.</span></li><li><b>Estado</b><span>Recibida, pendiente o confirmada.</span></li></ul></div></div>
+</section>
+
+<section aria-labelledby="t5">
+  <h2 id="t5"><span class="k">5</span>Fases</h2>
+  <p class="sub">13 semanas, con una decisión de ustedes al final de cada fase. Cada semana se muestra lo que quedó listo.</p>
+  <div class="tl" aria-hidden="true"><div class="tick">1</div><div class="tick">2</div><div class="tick">3</div><div class="tick">4</div><div class="tick">5</div><div class="tick">6</div><div class="tick">7</div><div class="tick">8</div><div class="tick">9</div><div class="tick">10</div><div class="tick">11</div><div class="tick">12</div><div class="tick">13</div></div>
+  <div class="tl" style="margin-top:4px"><div class="bar b1">Definir</div><div class="bar b2">Construir</div><div class="bar b3">Piloto</div></div>
+  <div class="mil" aria-label="Cuándo aparece cada entorno"><span></span><span></span><span></span><span>Alta y firma</span><span></span><span>Reservas</span><span>Pagos</span><span>Operación</span><span>Dueño y concierge</span><span>Backoffice y API</span><span></span><span></span><span></span></div>
+  <div class="ph3">
+    <div class="pc"><small>Semanas 1 y 2</small><h4>Definir</h4><p>Se cierra el alcance y se presenta un prototipo navegable antes de construir.</p><div class="dc"><b>Su decisión</b>Prototipo aprobado</div></div>
+    <div class="pc"><small>Semanas 3 a 10</small><h4>Construir</h4><p>La plataforma se arma por partes. Cada semana hay una demo y ustedes indican qué ajustar.</p><div class="dc"><b>Su decisión</b>10 a 15 propiedades firmadas y validadas</div></div>
+    <div class="pc"><small>Semanas 11 a 13</small><h4>Piloto</h4><p>Operación con propiedades y huéspedes reales. Ajustamos lo que se detecte.</p><div class="dc"><b>Su decisión</b>Piloto funcionando</div></div>
+  </div>
+  <p class="note">Los tiempos son estimados y se confirman al terminar Definir.</p>
+</section>
+
+<section aria-labelledby="t6">
+  <h2 id="t6"><span class="k">6</span>Lo que necesitamos de ustedes</h2>
+  <p class="sub">Cada punto tiene una fecha. Si alguno cambia, se ajusta el calendario del piloto.</p>
+  <div class="needs">
+    <div class="nh"><div>Qué</div><div>Para qué</div><div>Cuándo</div></div>
+    <div class="nr"><div class="nq"><b>Una persona que decida</b></div><div class="np"><small>Para qué</small>Cerrar dudas y aprobar entregas con una sola voz, para mantener el ritmo de las demos.</div><div class="nw">Semana 1</div></div><div class="nr"><div class="nq"><b>Lista de las 10 a 15 propiedades iniciales, con el estado de sus contratos y documentos</b></div><div class="np"><small>Para qué</small>Saber cuántas pueden pasar validación y planear las altas.</div><div class="nw">Semana 1</div></div><div class="nr"><div class="nq"><b>Su asesor legal y contable</b></div><div class="np"><small>Para qué</small>Confirmar los requisitos de alta contra su proceso de validación actual y cómo se factura.</div><div class="nw">Semana 2</div></div><div class="nr"><div class="nq"><b>Pasarela de pago elegida y cuenta abierta a nombre de la empresa</b></div><div class="np"><small>Para qué</small>Es el único medio de cobro. Les damos una recomendación en la semana 2.</div><div class="nw">Antes de la semana 3</div></div><div class="nr"><div class="nq"><b>Cómo manejan hoy la limpieza y el mantenimiento, y quiénes lo hacen</b></div><div class="np"><small>Para qué</small>Armar la operación como ya trabajan.</div><div class="nw">Antes de la semana 8</div></div><div class="nr"><div class="nq"><b>Proveedores iniciales del concierge</b></div><div class="np"><small>Para qué</small>Llenar el catálogo que ve el huésped.</div><div class="nw">Antes de la semana 9</div></div><div class="nr"><div class="nq"><b>Documentos completos de esas 10 a 15 propiedades</b></div><div class="np"><small>Para qué</small>Cada propiedad debe pasar validación para darse de alta y arrancar el piloto.</div><div class="nw">Antes de la semana 10</div></div><div class="nr"><div class="nq"><b>Respuesta a cada entrega en 48 horas</b></div><div class="np"><small>Para qué</small>Mantener el calendario de 13 semanas.</div><div class="nw">Todo el proyecto</div></div>
+  </div>
+</section>
+</div>
+
+</body></html>
